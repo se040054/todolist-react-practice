@@ -23,7 +23,7 @@ step 3 : install package:
 ```
 npm i 
 ```
-step4 : start project:
+step 4 : start project:
 ```
 npm run start
 ```
@@ -36,3 +36,5 @@ npm run start
 >> ' Enter ' for save 
 
 > 3 . Click `x` symbol to delete todo 
+
+### If this doesn't work , please use node between 14 to 16 
