@@ -4,7 +4,8 @@ import {
   CheckCircleIcon,
   CheckHoverIcon,
 } from 'assets/images';
-
+import { clsx } from 'clsx';
+import { useRef } from 'react';
 const StyledTaskItem = styled.div`
   min-height: 52px;
   display: flex;
@@ -100,18 +101,45 @@ const StyledTaskItem = styled.div`
   }
 `;
 
-const TodoItem = () => {
+const TodoItem = ({ todo, onChangeMode, onSave, onDelete, onToggleDone }) => {
+  const inputRef = useRef(null);
+  const handleKeydown = (e) => {
+    console.log(e.key)
+    if (e.key === 'Enter' && inputRef.current.value.length > 0) {
+      onSave?.({ id: todo.id, title: inputRef.current.value });
+    }
+    if (e.key === 'Escape') {
+      inputRef.current.value = todo.title // 自行新增的做法， 因為esc後會保留上次的輸入值 (誤導) 所以新增此項 在取消後讓input value 返回預設
+      onChangeMode?.({ id: todo.id, isEdit: false });
+    }
+  };
   return (
-    <StyledTaskItem>
+    <StyledTaskItem
+      className={clsx('', { done: todo.isDone }, { edit: todo.isEdit })}
+    >
       <div className="task-item-checked">
-        <span className="icon icon-checked" />
+        <span
+          id={todo.id}
+          className="icon icon-checked"
+          onClick={() => onToggleDone?.(todo.id)}
+        />
       </div>
-      <div className="task-item-body">
-        <span className="task-item-body-text">todo</span>
-        <input className="task-item-body-input" />
+      <div
+        className="task-item-body"
+        onDoubleClick={() => onChangeMode?.({ id: todo.id, isEdit: true })}
+      >
+        <span className="task-item-body-text">{todo.title}</span>
+        <input
+          className="task-item-body-input"
+          defaultValue={todo.title}
+          onKeyDown={handleKeydown}
+          ref={inputRef}
+        />
       </div>
       <div className="task-item-action ">
-        <button className="btn-reset btn-destroy icon"></button>
+        <button className="btn-reset btn-destroy icon" onClick={()=>{
+          onDelete?.(todo.id)
+        }}> </button>
       </div>
     </StyledTaskItem>
   );
