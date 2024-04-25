@@ -1,4 +1,7 @@
 import styled from 'styled-components';
+import Swal from 'sweetalert2';
+import { useAuth } from './contexts/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const StyledFooter = styled.footer`
   display: flex;
@@ -31,11 +34,27 @@ const StyledButton = styled.button`
   }
 `;
 
-const Footer = ({count}) => {
+const Footer = ({ count }) => {
+  const { logout } = useAuth();
+  const navigate = useNavigate();
+  const handleClick = () => {
+    Swal.fire({ // 
+      title: '已登出!',
+      text: '頁面將在2秒後自動跳轉!',
+      icon: 'success',
+      confirmButtonText: '繼續',
+      timer: 2000,
+      position: 'top',
+      willClose: () => {
+        logout();
+        navigate('/login'); // 注意swal是異步函式 如果navigate放在外部可能會搶先執行並且觸發effect
+      },
+    });
+  };
   return (
     <StyledFooter>
       <p>剩餘項目數：{count}</p>
-      <StyledButton>登出</StyledButton>
+      <StyledButton onClick={handleClick}>登出</StyledButton>
     </StyledFooter>
   );
 };

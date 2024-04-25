@@ -1,11 +1,14 @@
 import { Footer, Header, TodoCollection, TodoInput } from 'components';
 import { useState, useEffect } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 import { getTodos, createTodo, patchTodo, deleteTodo } from '../api/todos';
-
+import { useAuth } from 'components/contexts/AuthContext';
+import Swal from 'sweetalert2';
 const TodoPage = () => {
   const [inputValue, setInputValue] = useState('');
   const [todos, setTodos] = useState([]);
+  const navigate = useNavigate();
+  const { isAuthenticated, currentMember } = useAuth();
   const handleChange = (value) => {
     setInputValue(value);
   };
@@ -95,7 +98,7 @@ const TodoPage = () => {
       console.log(error);
     }
   };
-  const handleDelete =async  (id) => {
+  const handleDelete = async (id) => {
     try {
       await deleteTodo(id);
       setTodos((todos) => {
@@ -104,10 +107,8 @@ const TodoPage = () => {
         });
       });
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
-    
-    
   };
 
   useEffect(() => {
@@ -125,10 +126,25 @@ const TodoPage = () => {
     };
     getTodosAsync();
   }, []);
+  useEffect(() => {
+    if (isAuthenticated === false) {
+      Swal.fire({
+        title: '未登入!',
+        text: '頁面將在2秒後自動跳轉!',
+        icon: 'success',
+        confirmButtonText: '繼續',
+        timer: 2000,
+        position: 'top',
+        willClose: () => {
+          navigate('/login');
+        },
+      });
+    }
+  }, [isAuthenticated]); // 雖然AC會放navigate但實際上不推薦，navigate並非會改變的依賴項
   return (
     <div>
       TodoPage
-      <Header />
+      <Header username={currentMember?.name} />
       <TodoInput
         inputValue={inputValue}
         onChange={handleChange}
