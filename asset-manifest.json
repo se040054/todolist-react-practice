@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/todolist-react-practice/static/css/main.eea957d8.chunk.css",
-    "main.js": "/todolist-react-practice/static/js/main.048d4a60.chunk.js",
-    "main.js.map": "/todolist-react-practice/static/js/main.048d4a60.chunk.js.map",
+    "main.css": "/todolist-react-practice/static/css/main.1def3048.chunk.css",
+    "main.js": "/todolist-react-practice/static/js/main.ba6f73db.chunk.js",
+    "main.js.map": "/todolist-react-practice/static/js/main.ba6f73db.chunk.js.map",
     "runtime-main.js": "/todolist-react-practice/static/js/runtime-main.1c50c8df.js",
     "runtime-main.js.map": "/todolist-react-practice/static/js/runtime-main.1c50c8df.js.map",
     "static/js/2.a7166148.chunk.js": "/todolist-react-practice/static/js/2.a7166148.chunk.js",
@@ -10,17 +10,17 @@
     "static/js/3.45320453.chunk.js": "/todolist-react-practice/static/js/3.45320453.chunk.js",
     "static/js/3.45320453.chunk.js.map": "/todolist-react-practice/static/js/3.45320453.chunk.js.map",
     "index.html": "/todolist-react-practice/index.html",
-    "static/css/main.eea957d8.chunk.css.map": "/todolist-react-practice/static/css/main.eea957d8.chunk.css.map",
+    "static/css/main.1def3048.chunk.css.map": "/todolist-react-practice/static/css/main.1def3048.chunk.css.map",
     "static/js/2.a7166148.chunk.js.LICENSE.txt": "/todolist-react-practice/static/js/2.a7166148.chunk.js.LICENSE.txt",
-    "static/media/ac-logo.eea79863.svg": "/todolist-react-practice/static/media/ac-logo.eea79863.svg",
-    "static/media/check-active.680985db.svg": "/todolist-react-practice/static/media/check-active.680985db.svg",
-    "static/media/check-circle.ad8591fd.svg": "/todolist-react-practice/static/media/check-circle.ad8591fd.svg",
-    "static/media/check-hover.f1b1bcfd.svg": "/todolist-react-practice/static/media/check-hover.f1b1bcfd.svg"
+    "static/media/ac-logo.f4e0f3cb.svg": "/todolist-react-practice/static/media/ac-logo.f4e0f3cb.svg",
+    "static/media/check-active.95ca055c.svg": "/todolist-react-practice/static/media/check-active.95ca055c.svg",
+    "static/media/check-circle.30720b46.svg": "/todolist-react-practice/static/media/check-circle.30720b46.svg",
+    "static/media/check-hover.5e00062b.svg": "/todolist-react-practice/static/media/check-hover.5e00062b.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.1c50c8df.js",
     "static/js/2.a7166148.chunk.js",
-    "static/css/main.eea957d8.chunk.css",
-    "static/js/main.048d4a60.chunk.js"
+    "static/css/main.1def3048.chunk.css",
+    "static/js/main.ba6f73db.chunk.js"
   ]
 }
