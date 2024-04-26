@@ -1,7 +1,8 @@
 # Todo List with React
 
-![GITHUB](https://raw.githubusercontent.com/se040054/todolist-react-practice/main/2024-04-23%2017-52-49.jpg "Todo cover")
+![GITHUB](https://raw.githubusercontent.com/se040054/todolist-react-practice/main/examples/2024-04-26%2022-51-58.jpg "Todo cover")
 
+![GITHUB](https://raw.githubusercontent.com/se040054/todolist-react-practice/main/examples/2024-04-26%2022-56-39.jpg "Todo cover")
 
 **Just a pratice for React crud and authentication**
 
