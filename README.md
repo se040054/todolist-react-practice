@@ -6,6 +6,10 @@
 **Just a pratice for React crud and authentication**
 
 
+# Github Page : 
+https://se040054.github.io/todolist-react-practice/login
+
+This application is connecting to AC's API. Any operation needs to wait a few seconds.
 
 ## How to use ? 
 
