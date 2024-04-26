@@ -28,10 +28,8 @@ step 4 : start react app:
 npm run start
 ```
 
-step 5 : in other terminal run json server:
-```
-npm run dev
-```
+Close app : 
+` Ctrl + C `
 
 ## Functions
 
