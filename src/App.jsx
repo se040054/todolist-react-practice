@@ -4,7 +4,7 @@ import { TodoPage, LoginPage, SignUpPage, HomePage } from './pages';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
-  const basename = process.env.REACT_APP_PUBLIC_URL;
+  const basename = process.env.PUBLIC_URL;
   return (
     <div className="app">
       <BrowserRouter basename={basename}>
