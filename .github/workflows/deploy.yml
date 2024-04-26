@@ -2,9 +2,9 @@ name: Deploy to GitHub pages
 
 on:
   push:
-    branches: [record]
+    branches: [main]
   pull_request:
-    branches: [record]
+    branches: [main]
 
 jobs:
   build:
@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [16.x]
 
     steps:
       - name: Checkout repository
