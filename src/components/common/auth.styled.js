@@ -18,7 +18,7 @@ const StyledButton = styled.button`
   border-radius: 30px;
   background-color: #ff6600;
   border: none;
-
+  cursor:pointer;
   color: white;
   min-width: 300px;
   font-family: 'Noto Sans TC', sans-serif;
