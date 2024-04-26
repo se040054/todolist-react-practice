@@ -140,7 +140,7 @@ const TodoPage = () => {
         },
       });
     }
-  }, [isAuthenticated]); // 雖然AC會放navigate但實際上不推薦，navigate並非會改變的依賴項
+  }, [navigate, isAuthenticated]); // 這裡要放nave不然git action會出錯
   return (
     <div>
       TodoPage

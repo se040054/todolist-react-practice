@@ -32,7 +32,7 @@ const HomePage = () => {
         },
       });
     }
-  }, [isAuthenticated]);
+  }, [navigate, isAuthenticated]); // 這裡要放nave不然git action會出錯
 };
 
 export default HomePage;

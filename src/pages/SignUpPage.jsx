@@ -67,7 +67,7 @@ const SignUpPage = () => {
         });
       }
     }
-  }, [success, isAuthenticated]); // AC的作法會將navigate掛載dep 然而navigate是一個函式並且不會更新，不建議這樣做
+  }, [navigate, success, isAuthenticated]); // 這裡要放nave不然git action會出錯
 
   return (
     <AuthContainer>
